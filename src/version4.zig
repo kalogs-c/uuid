@@ -17,8 +17,8 @@ pub fn UUID() core.UUID {
     @memcpy(uuid[0..16], pool[poolPosition..(poolPosition + 16)]);
     poolPosition += 16;
 
-    uuid[6] = (uuid[6] & 0x0f) | 0x40; // Version 4
-    uuid[8] = (uuid[8] & 0x3f) | 0x80; // Variant is 10
+    uuid[6] = (uuid[6] & 0x0F) | 0x40; // Version 4
+    uuid[8] = (uuid[8] & 0x3F) | 0x80; // Variant is 10
 
     return uuid;
 }
