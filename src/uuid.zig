@@ -43,7 +43,6 @@ test "toString hex digits are lowercase" {
 
     for (s) |c| {
         if (c == '-') continue;
-
         const charAllowed = (c >= '0' and c <= '9') or (c >= 'a' and c <= 'f');
         try std.testing.expect(charAllowed);
     }

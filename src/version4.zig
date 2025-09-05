@@ -2,9 +2,9 @@ const std = @import("std");
 const random = std.crypto.random;
 const core = @import("uuid.zig");
 
-pub const poolSize = 16 * 16;
-pub var poolPosition: u16 = poolSize;
-pub var pool: [poolSize]u8 = undefined;
+const poolSize = 16 * 16;
+var poolPosition: u16 = poolSize;
+var pool: [poolSize]u8 = undefined;
 
 // race condition here :(
 pub fn UUID() core.UUID {
