@@ -1,10 +1,11 @@
-const uuid = @import("uuid.zig");
-const v4 = @import("version4.zig");
+pub const UUID = @import("uuid.zig").UUID;
+pub const UUIDErrors = @import("uuid.zig").UUIDErrors;
 
-pub fn UUIDv4() uuid.UUID {
-    return v4.UUID();
-}
+pub const UUIDv4 = @import("version4.zig").UUID;
+pub const UUIDToString = @import("uuid.zig").toString;
+pub const ParseUUID = @import("uuid.zig").parse;
 
-pub fn UUIDToString(id: uuid.UUID) [36]u8 {
-    return uuid.toString(id);
+test {
+    _ = @import("uuid.zig");
+    _ = @import("version4.zig");
 }
